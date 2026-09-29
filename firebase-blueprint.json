@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "Aset": {
+      "title": "Aset",
+      "description": "Data Aset Desa SIPADES",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "desaId": { "type": "string" },
+        "desaName": { "type": "string" },
+        "klasifikasi": { "type": "string" },
+        "namaAset": { "type": "string" },
+        "kodeAset": { "type": "string" },
+        "tahunPerolehan": { "type": "number" },
+        "nilaiPerolehan": { "type": "number" },
+        "kondisi": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "desaId", "namaAset", "kodeAset"]
+    },
+    "PermohonanVerifikasi": {
+      "title": "PermohonanVerifikasi",
+      "description": "Permohonan mutasi atau penghapusan aset desa",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "asetId": { "type": "string" },
+        "desaId": { "type": "string" },
+        "jenis": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "asetId", "desaId", "jenis", "status"]
+    },
+    "Desa": {
+      "title": "Desa",
+      "description": "Profil Desa",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "code": { "type": "string" }
+      },
+      "required": ["id", "name", "code"]
+    },
+    "KecamatanProfile": {
+      "title": "KecamatanProfile",
+      "description": "Profil Camat & Kecamatan",
+      "type": "object",
+      "properties": {
+        "namaKecamatan": { "type": "string" },
+        "namaCamat": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/asets/{asetId}": {
+      "schema": "Aset",
+      "description": "Koleksi inventaris aset seluruh desa se-Kecamatan Sirombu"
+    },
+    "/verifikasiList/{verifId}": {
+      "schema": "PermohonanVerifikasi",
+      "description": "Daftar permohonan mutasi dan penghapusan aset desa"
+    },
+    "/desas/{desaId}": {
+      "schema": "Desa",
+      "description": "Profil 25 desa se-Kecamatan Sirombu"
+    },
+    "/system/{docId}": {
+      "schema": "KecamatanProfile",
+      "description": "Konfigurasi profil kecamatan dan camat"
+    }
+  }
+}

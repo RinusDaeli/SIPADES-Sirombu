@@ -1,0 +1,10 @@
+{
+  "name": "SIPADES SIROMBU - Pengelolaan Aset Desa Nias Barat NEW ",
+  "description": "Sistem Informasi Pendataan, Verifikasi, dan Pelaporan Aset Tetap Desa Kecamatan Sirombu Kabupaten Nias Barat sesuai Permendagri No. 20 Tahun 2018",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
